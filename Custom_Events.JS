@@ -12,4 +12,10 @@ emitter.on('newEvent', (message)=>{
 
 emitter.emit('newEvent','mohammed abboudi.');
 
+// module.exports = emitter;
+module.exports = {
+
+    emitter : emitter
+}
+
 // this a small demonstration about what can events module can handle, there are a lot more. 
