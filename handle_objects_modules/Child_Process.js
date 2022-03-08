@@ -6,16 +6,19 @@ const exec = require('child_process').exec;
 
 const child_process = require('child_process');
 
-exec("dir", (err, stdout)=>{
+exec("dir", (err, stdout, stderr)=>{
 
     if (err) {
         
         console.log(err);
 
-    } else {
+    } else if(stderr){
         
-        console.log(stdout);
+        console.log(stderr);
 
+    }else{
+
+        console.log(stdout);
     }
 
 })
