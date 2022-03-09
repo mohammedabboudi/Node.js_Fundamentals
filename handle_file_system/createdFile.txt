@@ -1,0 +1,2 @@
+hello mohammed you created this file using writeFile.
+hello again these are extra stuf added to the file using appendFile
