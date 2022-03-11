@@ -12,7 +12,7 @@ http.createServer((req, serverRes)=>{
             httpRes.on('data', data =>{
 
                 httpRes.setEncoding('utf8');
-                console.log(data);
+                serverRes.write(data);
 
             });
 
@@ -25,8 +25,8 @@ http.createServer((req, serverRes)=>{
         })
     }else{
 
+        serverRes.writeHead(404, 'no data to reach !!')
         serverRes.end('no data to reach...');
-        console.log('no data to reach...');
     }
 
 }).listen(4444);
