@@ -1,4 +1,4 @@
-const axios = require('axios'); //axios is a promise based http client for the browser and node.js
+const axios = require('axios'); //axios is a promise based http client for the browser and node.js, it allows you to do http or https requests.
 
 let username = 'mohammedabboudi';
 
