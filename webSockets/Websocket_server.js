@@ -9,9 +9,19 @@ WSS.on('connection', (ws)=>{
 
     ws.on('message', (message) =>{
 
+      
+      // broadcasting : "Share data between all the cliets".
+      
+      WSS.clients.forEach((client)=>{
+
+        client.send(message.toString());
+
+      });
+
       console.log(message.toString());
 
     })
+
 
 })
 
