@@ -1,4 +1,4 @@
-// Catching the payload that is comming from the server side and handle it.
+// Catching the payload or the data that is comming from the server side and handle it.
 
 WSC.onmessage = (payload)=>{
 
