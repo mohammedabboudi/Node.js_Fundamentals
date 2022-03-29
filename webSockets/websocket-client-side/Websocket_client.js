@@ -1,0 +1,1 @@
+const WSC = new WebSocket('ws://localhost:4000'); // open a new connection by create a new instantiation of the the websocket interface. 
