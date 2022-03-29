@@ -1,4 +1,4 @@
-const WSC = new WebSocket('ws://localhost:4000');
+// Handle the data and post it to the server side.
 
 document.forms[0].onsubmit = ()=>{
 
