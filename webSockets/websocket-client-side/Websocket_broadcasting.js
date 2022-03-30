@@ -2,6 +2,8 @@
 
 WSC.onmessage = (payload)=>{
 
-    conversation.innerHTML += `<p>${payload.data}</p>`;
+    let h5 = document.createElement('h5');
+        h5.innerHTML = payload.data;
+    conversation.appendChild(h5);
     
 }
