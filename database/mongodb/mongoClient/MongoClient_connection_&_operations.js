@@ -43,10 +43,18 @@ MongoClient.connect('mongodb://localhost:27017/animals', (err, client) => {
       $set: { age : 11 }
 
     })
-    
 
-  
+    // DELETE OPERATION IN DATABASE :
+
+    db.collection('mammals').findOneAndDelete({
+
+      // _id: ObjectId('62471c7a9dd1a7da0b05873c')
+      age: 10
+
+    })
 
     })
     
-    
+    //======================= :
+
+    // YOU CAN OPERATE ON YOUR DATABASE AND USE SOME USEFUL METHODS THAT GONNA HELP YOU TO DO SOME IMPRESSIVE THINGS .
