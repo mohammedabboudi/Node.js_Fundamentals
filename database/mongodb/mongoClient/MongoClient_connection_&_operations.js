@@ -24,6 +24,16 @@ MongoClient.connect('mongodb://localhost:27017/animals', (err, client) => {
 
     })
 
+    // FIND OPERATION IN DATABASE :
+
+     db.collection('mammals').find().toArray((err, result) => {
+          if (err) throw err
+      
+          console.log(result)
+        })
+      
+    
+
   
 
     })
