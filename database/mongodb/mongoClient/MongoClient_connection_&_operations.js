@@ -31,7 +31,18 @@ MongoClient.connect('mongodb://localhost:27017/animals', (err, client) => {
       
           console.log(result)
         })
-      
+
+    // UPDATE OPERATION IN DATABASE :
+    
+    db.collection('mammals').findOneAndUpdate({
+
+      _id: ObjectId('6246d78476dc0e134b2147ad')
+
+    },{
+
+      $set: { age : 11 }
+
+    })
     
 
   
