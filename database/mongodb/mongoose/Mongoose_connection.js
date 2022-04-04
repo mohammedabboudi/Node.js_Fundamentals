@@ -1,6 +1,7 @@
 // REQUIRE THE MODEL :
 
-const User = require('./models/User');
+// const User = require('./models/User');
+const User = require('./models/User_schema_object');
 
 // REQUIRE MONGOOSE AND USE IT :
     
@@ -14,10 +15,10 @@ mongoose.connection.once('open', ()=> console.log(`CONNECTED USING MONGOOSE...`)
 
 const newUser = new User({
 
-    firstName : 'mohamed',
-    lastName : 'abboudi',
-    age : 24,
-    password : 'qwerty1234456789'
+    firstName : 'vasvamon',
+    lastName : 'kouski',
+    age : 30,
+    password : '123456789qwertyuio'
 
 });
 
