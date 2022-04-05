@@ -7,8 +7,11 @@ const User = require('./models/User_schema_object');
     
 const mongoose = require('mongoose');
 
+// CONNECTION :
 
 mongoose.connect('mongodb://localhost/my_database');
+
+// CONNECTION TEST :
 
 mongoose.connection.once('open', ()=> console.log(`CONNECTED USING MONGOOSE...`)).on('error', (err)=> console.log(`could not connect to mongodb`, err))
 
