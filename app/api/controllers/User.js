@@ -1,13 +1,18 @@
 const database = require('../../config/database/mongoose');
 const User = require('../models/User');
 const userRouter = require('../routes/User');
-// const express = require('express');
-
 
 
 exports.user_list = function(req, res) {
 
-    res.send(`<h1>HELLO FROM THE USERS LIST PAGE...</h>`);
+    User.find({}).then(users =>{
+
+        res.send(users)
+
+    }).catch(err =>{
+
+        res.send(err);
+    })
 };
 
 exports.users_create = (req, res)=>{
