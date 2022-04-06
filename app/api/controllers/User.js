@@ -1,15 +1,8 @@
 const database = require('../../config/database/mongoose');
 const User = require('../models/User');
 const userRouter = require('../routes/User');
+// const express = require('express');
 
-let userCredentials = {
-
-    firstName : 'mohammed',
-    lastName : 'abboudi',
-    age : 20,
-    password : 'zxcvbnmqwertyuiop123456'
-
-}
 
 
 exports.user_list = function(req, res) {
@@ -18,6 +11,18 @@ exports.user_list = function(req, res) {
 };
 
 exports.users_create = (req, res)=>{
+    console.log(req.body.firstname);
+
+    let userCredentials = {
+
+        firstName : req.body.firstname,
+        lastName : req.body.lastname,
+        age : req.body.age,
+        password : req.body.password
+    
+    }
+
+    // console.log(userCredentials.firstname)
 
 
     const newUser = new User(userCredentials);
@@ -29,6 +34,10 @@ exports.users_create = (req, res)=>{
         res.send(`THE USER HAS BEEN REGESTRED SUCCESSFULY : ${dataSaved}`);
     
     });
+
+    // res.json({
+    //     message: "Hello"
+    // })
 
 }
 
