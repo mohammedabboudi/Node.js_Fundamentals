@@ -18,7 +18,7 @@ router.patch('/patch/:id',userController.users_patch)
 
 router.put('/put/:id',userController.users_put)
 
-router.get('/delete/:id', userController.users_delete)
+router.delete('/delete/:id', userController.users_delete)
 
 
 module.exports = router
