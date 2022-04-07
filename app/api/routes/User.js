@@ -11,7 +11,7 @@ router.get('/', userController.user_list)
 
 router.post('/create', userController.users_create)
 
-router.get('/edit',userController.users_edit)
+router.patch('/edit/:id',userController.users_edit)
 
 router.get('/delete', userController.users_delete)
 

@@ -1,6 +1,5 @@
 const database = require('../../config/database/mongoose');
 const User = require('../models/User');
-const userRouter = require('../routes/User');
 
 
 exports.user_list = function(req, res) {
@@ -48,7 +47,14 @@ exports.users_create = (req, res)=>{
 
 exports.users_edit = (req, res)=>{
 
-    res.send(`<h1>HELLO FROM THE EDIT USERS PAGE...</h>`)
+    const id = req.params.id;
+    const age = req.body.age;
+
+    User.findByIdAndUpdate({_id : id}, {$set : {age : age}}, {new: true}).then( dataSaved =>{
+
+        res.send(`the user is updated ${id} and ${age}`)
+        console.log(`the user credentials are updated...`)
+    })
 
 }
 
