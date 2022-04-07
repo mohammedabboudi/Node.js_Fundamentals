@@ -1,4 +1,3 @@
-const { json } = require('express/lib/response');
 const database = require('../../config/database/mongoose');
 const User = require('../models/User');
 
@@ -53,6 +52,7 @@ exports.users_create = (req, res)=>{
 
 }
 
+
 exports.users_patch = (req, res)=>{
 
     const id = req.params.id;
@@ -87,18 +87,20 @@ exports.users_patch = (req, res)=>{
 // }
 
 
+
 // ANOTHER EASY WAY TO PUT DATA :
+
 
 exports.users_put = (req, res)=>{
 
-    User.findOne({_id : req.params.id}).then(User=>{
+    User.findOne({_id : req.params.id}).then(user=>{
 
-    User.firstName = req.body.firstName;
+    user.firstName = req.body.firstName;
     // User.lastName = req.body.lastName;
     // User.age = req.body.age;
     // User.password = req.body.password;
 
-    User.save().then( dataSaved =>{
+    user.save().then( dataSaved =>{
         res.send(`the user is updated using put method ${dataSaved}}}`)
         console.log(`the user credentials are updated using put method...`)
     }).catch(err =>{
@@ -110,10 +112,59 @@ exports.users_put = (req, res)=>{
 }
 
 
+// MULTIPLE WAYS TO MAKE A DELETE OPERATION :
+
+// exports.users_delete = (req, res)=>{
+
+
+//     User.findOne({_id : req.params.id}).then(user =>{
+
+//         user.remove().then(removedUser=>{
+
+//             res.send(`the user have been deleted and that user is ${removedUser} `)
+//         });
+
+//     })
+// }
+
+
+//================ **********==============//
+
+
 exports.users_delete = (req, res)=>{
 
-    res.send(`<h1>HELLO FROM THE DELETE USERS PAGE...</h>`)
 
+    User.remove({_id : req.params.id}).then( ()=>{
+
+            res.send(`the user have been deleted successfuly`)
+
+    })
 }
 
 
+//================ **********==============//
+
+
+// exports.users_delete = (req, res)=>{
+
+
+//     User.findByIdAndRemove({_id : req.params.id}).then(removedUser =>{
+        
+//             res.send(`the user have been deleted and that user is ${removedUser} `)
+
+//     })
+// }
+
+
+//================ **********==============//
+
+
+// exports.users_delete = (req, res)=>{
+
+
+//     User.findByIdAndDelete({_id : req.params.id}).then(removedUser =>{
+
+//             res.send(`the user have been deleted and that user is ${removedUser} `)
+
+//     })
+// }
