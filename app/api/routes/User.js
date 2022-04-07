@@ -1,5 +1,4 @@
 const express = require('express');
-const { append } = require('express/lib/response');
 const router = express.Router();
 const userController = require('../controllers/User');
 const userMiddleware = require('../middleware/User');
@@ -11,9 +10,15 @@ router.get('/', userController.user_list)
 
 router.post('/create', userController.users_create)
 
-router.patch('/edit/:id',userController.users_edit)
+// PATCH UPDATES A PIECE OF DATA WITHOUT INCLUDE THE OTHER PIECES :
 
-router.get('/delete', userController.users_delete)
+router.patch('/patch/:id',userController.users_patch)
+
+// PUT UPDATES DATA :
+
+router.put('/put/:id',userController.users_put)
+
+router.get('/delete/:id', userController.users_delete)
 
 
 module.exports = router
